@@ -1,0 +1,39 @@
+
+#pointer-dot {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 2.5px solid transparent;
+    position: fixed;
+    border-radius: 4px;
+    z-index: 9999;
+    pointer-events: none;
+    transition: border-color 0.5s;
+}
+@media screen and (max-width:991px){
+    #pointer-ring,
+    #pointer-dot {
+        display: none !important;
+    }
+}
+#pointer-ring {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    padding: 15px;
+    border: 2px solid transparent;
+    position: fixed;
+    border-radius: 100px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/*html {
+    cursor: none !important;
+}
+
+a {
+    cursor: none !important;
+}*/

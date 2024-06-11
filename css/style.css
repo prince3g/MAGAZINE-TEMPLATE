@@ -1,0 +1,319 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+     -webkit-font-smoothing: antialiased;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    background-color: #000000;
+    font-family: 'Helvetica Neue LP Pro',sans-serif;
+    color: #ffffff;
+    font-size:14px;
+    line-height: 20px;
+    cursor: none;
+}
+@media screen and (max-width:991px){
+    body{
+        cursor: pointer !important;
+    }
+}
+li{
+    list-style: none;
+}
+a:hover,
+a:focus,
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+/*main-container*/
+.main-container{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    z-index: -1000;
+}
+/*hero-video-bg*/
+.hero-video-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -100;
+}
+.hero-video-bg video{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.fixed-text{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: #000000;
+    mix-blend-mode: multiply;
+    color:#ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue LP Pro',sans-serif;
+    z-index: -100;
+    letter-spacing: 0.3em;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/fixed-bg.jpeg);
+      animation: 0.2s infinite animate-bg;
+      background-attachment: fixed;
+}
+    @keyframes animate-bg {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0% 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+.fixed-text span{
+    position: absolute;
+    transform: rotate(90deg);
+    left: -100px;
+    font-size:8em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.top-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    padding: 0px 60px;
+    z-index: 1100;
+}
+.nav-brand{
+    font-size:2em;
+    text-transform: uppercase;
+    font-family: Roboto-Black;
+    letter-spacing:-2px;
+    color:#ffffff;
+}
+.page-counter{
+    position: absolute;
+    right:220px;
+    display: flex;
+    align-items: center;
+}
+.seperator{
+    width:50px;
+    height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2px;
+}
+.seperator span{
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+}
+.counter-main{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #ffffff;
+}
+.counter-main span{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.indices{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+.nav-toggler{
+    position: absolute;
+    right: 60px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.8s ease-in-out
+}
+.nav-toggler span{
+    position: absolute;
+    width:90%;
+    height: 2px;
+    transition: all 0.8s ease-in-out;
+    background-color:#ffffff;
+}
+.nav-toggler span:nth-child(1){
+    transform: translateY(-8px);
+}
+.nav-toggler span:nth-child(3){
+    transform: translateY(8px);
+}
+.menu-main span:nth-child(1){
+    transform: rotate(45deg);
+}
+.menu-main span:nth-child(2){
+    width: 0px;
+}
+.menu-main.nav-toggler{
+    transform: rotate(90deg);
+}
+.menu-main span:nth-child(3){
+    transform: rotate(-45deg);
+}
+.site-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index:999;
+    background-color: #000000;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+}
+.menu-main.site-menu{
+    height:100%;
+}
+.site-menu ul{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding:10px 60px;
+    padding-top:120px;
+    background-color: #000000;
+}
+.site-menu ul li{
+    width: 100%;
+    height: auto;
+    height:160px;
+    overflow: hidden;
+}
+.site-menu ul li a{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-family: 'Helvetica Neue LP Pro',sans-serif;
+    color: hsla(0,0%,100%,0);
+    font-size: 12em;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1em;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: #ffffff;
+    transform: translateY(100%);
+}
+.menu-main.site-menu ul li a{
+    transform:translateY(0%);
+}
+.site-menu ul .nav-icon-1 a{
+    transition: all 0.5s ease-in-out;
+}
+.site-menu ul .nav-icon-2 a{
+    transition: all 0.8s ease-in-out;
+}
+.site-menu ul .nav-icon-3 a{
+    transition: all 1s ease-in-out;
+}
+.site-menu ul .nav-icon-4 a{
+    transition: all 1.5s ease-in-out;
+}
+.site-menu ul li a::before {
+  transition: height 0.8s ease;
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  height: 1em;
+   color: #000000;
+  left: 0;
+  top: 0;
+}
+.site-menu ul li a:hover:before {
+  height: 0;
+}
+.menu-main.zoom-icon{
+    display: none;
+}
+/*site-footer*/
+.site-footer{
+    position: fixed;
+    bottom:30px;
+    padding:0px 60px;
+    z-index: 100;
+}
+.site-footer p{
+    margin: 0;
+    padding: 0;
+}
+@media screen and (max-width:991px){
+    #pointer-ring,
+    #pointer-dot {
+        display: none !important;
+    }
+}
